@@ -82,3 +82,4 @@ test('4*max(5,4)',20);
 test('max(4,max(6,5))',6);
 test('max(max(6,5),4)',6);
 test('{ x=5  fun plus1(z){ 1+z }   plus1(x)  }', 6);
+test('{fun fib(z){if{z<2}{z}else{fib(z-1)+fib(z-2)}} fib(20)}', 6765);

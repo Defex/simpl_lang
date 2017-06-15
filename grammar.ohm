@@ -1,0 +1,45 @@
+CoolNums {
+    // just a basic integer
+    Expr =  FunDef | WhileExpr | IfExpr | Block | Assign | MathOp | Term | String
+
+    FunDef = "fun" identifier "(" Parameters ")" Block
+    Parameters = ListOf<identifier, ",">
+    
+    MathOp = Mul | Div | Add | Sub | Eq | Neq | Lt | Lte | Gt | Gte
+    Add = Expr "+" Term
+    Sub = Expr "-" Term
+    Mul = Expr "*" Term
+    Div = Expr "/" Term
+    Eq = Expr "==" Term
+    Neq = Expr "!=" Term
+    Lt = Expr "<" Term
+    Lte = Expr "<=" Term
+    Gt = Expr ">" Term
+    Gte = Expr ">=" Term
+
+    Term = Group | FunCall | identifier | Number | String
+    Group = "(" Expr ")"
+    FunCall = identifier "(" Arguments ")"
+    Arguments = ListOf<Expr, ",">
+    Block = "{" Expr* "}"
+    IfExpr = "if" Block Block ("else" Block)?
+    WhileExpr = "while" Block Block
+    qq = "\""
+    String = qq (~qq any)+ qq
+    
+    Assign = identifier "=" Expr
+    identifier = letter (letter|digit)*
+
+    Number = oct | hex | float | int
+    int = digit+
+    float = digit+ "." digit+ exp?
+    exp = "e" "-"? digit+
+    oct = "0o" octDigit+
+    octDigit = "0".."7"
+    hex = "0x" hexDigit+
+    hexDigit := "0".."9" | "a" .. "f" | "A".. "F"
+
+    // override space to include slash slash comments
+    space := "\t" | " " | "\n" | comment
+    comment = "//" (~"\n" any)*
+}

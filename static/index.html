@@ -7,16 +7,27 @@
 		<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
 	</head>
 	<body>
-		<div class="left">
-			<div class="label">INPUT</div>
-			<form action="/parse" method="post" id="forma">
-				<textarea id="input" name="input"></textarea>
-				<input type="submit" value="evaluate">
-			</form>
+		<div class="top">
+			<div class="left">
+				<div class="label">INPUT</div>
+				<form action="/parse" method="post" id="forma">
+					<textarea id="input" name="input"></textarea>
+					<input type="submit" value="evaluate">
+				</form>
+			</div>
+			<div class="right">
+				<div class="label">OUTPUT</div>
+				<textarea id="output"></textarea>
+			</div>
 		</div>
-		<div class="right">
-			<div class="label">OUTPUT</div>
-			<textarea id="output"></textarea>
+		<div class="bottom">
+			<form action="/load" method="post" id="failai">
+				<input type="button" value="skaicius" class="load-btn">
+				<input type="button" value="boolean" class="load-btn">
+				<input type="button" value="ifas" class="load-btn">
+				<input type="button" value="fib rec" class="load-btn">
+				<input type="button" value="fib loop" class="load-btn">
+			</form>
 		</div>
 		<script type="text/javascript" src="functions.js"></script>
 	</body>

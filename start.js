@@ -60,6 +60,32 @@ app.post('/parse', function(req, res) {
   res.end(JSON.stringify({'results': result}));
 });
 
+app.post('/load', function(req, res) {
+  var result;
+  var keys = Object.keys(req.body);
+  switch(keys[0]) {
+  	case 'skaicius':
+  	  result = fs.readFileSync('static/skaicius.sl').toString();
+  	  break;
+  	case 'boolean':
+  	  result = fs.readFileSync('static/boolean.sl').toString();
+  	  break;
+  	case 'ifas':
+  	  result = fs.readFileSync('static/ifas.sl').toString();
+  	  break;
+  	case 'fib rec':
+  	  result = fs.readFileSync('static/fib rec.sl').toString();
+  	  break;
+  	case 'fib loop':
+  	  result = fs.readFileSync('static/fib loop.sl').toString();
+  	  break;
+  	default:
+  	  result = 'nesupratau';
+  }
+  res.writeHead(200, {'Content-Type':'application/json'});
+  res.end(JSON.stringify({'results': result}));
+});
+
 app.listen(8080, function() {
   console.log('Server running at http://127.0.0.1:8080/');
 });

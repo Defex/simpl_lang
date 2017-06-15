@@ -1,10 +1,18 @@
 .left {
 	width: 49%;
 	float: left;
+	margin-bottom:10px;
 }
 .right {
 	width: 49%;
 	float: left;
+	margin-bottom:10px;
+}
+.top, .bottom {
+	clear: both;
+}
+input {
+	margin: 2px;
 }
 textarea {
 	height: 200px;

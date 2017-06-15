@@ -1,6 +1,11 @@
-function eventHandler(e) {
-
-}
+$(".load-btn").click(function(e) {
+	console.log(this.value);
+	$.post(
+		"/load",
+		this.value,
+		function(data) {$("#input").val(data.results)}
+	);
+})
 $("#forma").submit(function(e) {
 	e.preventDefault();
 	var $this = $(this);

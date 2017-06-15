@@ -4,6 +4,8 @@
   "description": "",
   "main": "test1.js",
   "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
     "ohm-js": "^0.13.1"
   },
   "devDependencies": {},

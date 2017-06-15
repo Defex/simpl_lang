@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>SIMPL_LANG</title>
+		<link rel="stylesheet" href="styles.css">
+		<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	</head>
+	<body>
+		<div class="left">
+			<div class="label">INPUT</div>
+			<form action="/parse" method="post" id="forma">
+				<textarea id="input" name="input"></textarea>
+				<input type="submit" value="evaluate">
+			</form>
+		</div>
+		<div class="right">
+			<div class="label">OUTPUT</div>
+			<textarea id="output"></textarea>
+		</div>
+		<script type="text/javascript" src="functions.js"></script>
+	</body>
+</html>

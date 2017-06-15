@@ -1,0 +1,16 @@
+.left {
+	width: 49%;
+	float: left;
+}
+.right {
+	width: 49%;
+	float: left;
+}
+textarea {
+	height: 200px;
+	width: 70%;
+	display: block;
+}
+input {
+	display: block;
+}

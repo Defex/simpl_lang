@@ -40,6 +40,6 @@ CoolNums {
     hexDigit := "0".."9" | "a" .. "f" | "A".. "F"
 
     // override space to include slash slash comments
-    space := "\t" | " " | "\n" | comment
+    space := "\t" | " " | "\n" | "\r" | comment
     comment = "//" (~"\n" any)*
 }
